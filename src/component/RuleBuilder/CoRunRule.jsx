@@ -1,18 +1,15 @@
 import React, { useState } from "react";
 
 const CoRunRule = ({ onAddRule }) => {
-  const [selectedTasks, setSelectedTasks] = useState("");
+  const [taskIds, setTaskIds] = useState("");
 
   const handleAdd = () => {
-    const tasks = selectedTasks.split(",").map(t => t.trim()).filter(Boolean);
+    const tasks = taskIds.split(",").map(t => t.trim()).filter(Boolean);
     if (tasks.length >= 2) {
-      onAddRule({
-        type: "coRun",
-        tasks,
-      });
-      setSelectedTasks("");
+      onAddRule({ type: "coRun", tasks });
+      setTaskIds("");
     } else {
-      alert("Select at least two TaskIDs");
+      alert("Please enter at least two TaskIDs");
     }
   };
 
@@ -22,8 +19,8 @@ const CoRunRule = ({ onAddRule }) => {
       <input
         type="text"
         placeholder="Enter TaskIDs (comma separated)"
-        value={selectedTasks}
-        onChange={e => setSelectedTasks(e.target.value)}
+        value={taskIds}
+        onChange={e => setTaskIds(e.target.value)}
         className="border px-2 py-1 w-full mb-2"
       />
       <button onClick={handleAdd} className="bg-blue-600 text-white px-4 py-1 rounded">

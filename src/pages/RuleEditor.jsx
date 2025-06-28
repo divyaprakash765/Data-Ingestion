@@ -1,12 +1,12 @@
-import React, { useState } from "react";
 import CoRunRule from "../component/RuleBuilder/CoRunRule";
-import SlotRestrictionRule from "../component/RuleBuilder/CoRunRule";
-import LoadLimitRule from "../component/RuleBuilder/CoRunRule";
-import PhaseWindowRule from "../component/RuleBuilder/CoRunRule";
-import PatternMatchRule from "../component/RuleBuilder/CoRunRule";
-import PrecedenceOverrideRule from "../component/RuleBuilder/CoRunRule";
-import RuleSummary from "../component/RuleBuilder/CoRunRule";
+import SlotRestrictionRule from "../component/RuleBuilder/SlotRestrictionRule";
+import LoadLimitRule from "../component/RuleBuilder/LoadLimitRule";
+import PhaseWindowRule from "../component/RuleBuilder/PhaseWindowRule";
+import PatternMatchRule from "../component/RuleBuilder/PatternMatchRule";
+import PrecedenceOverrideRule from "../component/RuleBuilder/PrecedenceOverrideRule";
+import RuleSummary from "../component/RuleBuilder/RuleSummary";
 import { downloadRulesJSON } from "../utils/ruleUtils";
+import { useState } from "react";
 
 const RuleEditor = () => {
   const [rules, setRules] = useState([]);
